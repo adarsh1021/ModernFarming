@@ -1,0 +1,20 @@
+{% extends 'soil/base.html' %}
+{% block body %}
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Connect to testing kit</h2><br>
+            <div class="dropdown">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    Select COM port <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    {% for port in serial_ports %}
+                    <li><a href="{% url 'soil:analyze_sample' port %}">{{ port }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock %}
