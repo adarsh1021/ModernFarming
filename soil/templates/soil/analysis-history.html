@@ -1,0 +1,11 @@
+{% extends 'soil/base.html' %}
+{% block body %}
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Analysis History</h2><br>
+            <h3>{% for sample in samples %}{{sample.time}}&nbsp&nbsp:&nbsp&nbsp{{sample.percent}}%<br>{% endfor %}</h3>
+        </div>
+    </div>
+</body>
+{% endblock %}

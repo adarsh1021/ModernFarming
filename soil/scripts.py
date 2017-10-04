@@ -40,3 +40,23 @@ def serial_ports():
 
 if __name__ == '__main__':
     print(serial_ports())
+
+
+def get_values(port):
+    # ser = serial.Serial(port, 9600)  # Establish the connection on a specific port
+    ser = serial.Serial(
+        port=port,
+        baudrate=9600,
+        parity=serial.PARITY_NONE,
+        stopbits=serial.STOPBITS_ONE,
+        bytesize=serial.EIGHTBITS
+    )
+    result = []
+    line = ""
+
+    for i in range(31): # reading 31 values
+        line = ser.readline()
+        result.append(str(line)[:-2])
+    print result
+    return result[1:]
+

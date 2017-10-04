@@ -10,3 +10,5 @@ from .models import *
 
 admin.site.register(User)
 admin.site.register(LandProfile)
+admin.site.register(SoilMoisture)
+admin.site.register(Crops)

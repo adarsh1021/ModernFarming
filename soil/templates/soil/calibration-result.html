@@ -1,0 +1,12 @@
+{% extends 'soil/base.html' %}
+{% block body %}
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h2>Calibration</h2><br>
+            <h4>Moisture Content: {{ result }}%</h4><br>
+            <a href="{% url 'soil:calibrate_save' result %}"><button class="btn btn-primary">Save Calibration</button></a>
+        </div>
+    </div>
+</body>
+{% endblock %}

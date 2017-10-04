@@ -1,24 +1,23 @@
-   //////////////////////////////////////////////
-  //        ARDUINO SOIL MOISTURE DEMO        //
- //                                          //
-//           http://www.educ8s.tv           //
-/////////////////////////////////////////////
-
-
-
 int sensorPin = A0;  
-int sensorValue = 0;  
-int percent = 0;
+int sensorValue = 0; 
+float percent=0; 
+char input;
+#define N 31
+int i;
 
 void setup() {
   Serial.begin(9600);
 }
 
 void loop() {
-  
-  sensorValue = analogRead(sensorPin);
-  percent = convertToPercent(sensorValue);
   printValuesToSerial();
+  /*if (Serial.available()) {
+    input = Serial.read();
+    if (input=='5') {
+      printValuesToSerial();
+    }
+    Serial.println(-1);
+  }*/
 }
 
 int convertToPercent(int value)
@@ -30,10 +29,10 @@ int convertToPercent(int value)
 
 void printValuesToSerial()
 {
-  // Serial.print("\n\nAnalog Value: ");
-  Serial.println(sensorValue);
-  // Serial.print("\nPercent: ");
-  // Serial.print(percent);
-  // Serial.print("%");
+  for (i=0; i<N; i++) {
+    sensorValue = analogRead(sensorPin);
+    percent = convertToPercent(sensorValue);
+    Serial.println(percent);
+  }
 }
 

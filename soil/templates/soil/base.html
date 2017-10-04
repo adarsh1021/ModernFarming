@@ -35,8 +35,8 @@
         <div class="collapse navbar-collapse" id="menu-items">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{% url 'soil:analyze' %}">Analyze Sample</a></li>
-                <li><a href="#">Analysis History</a></li>
-                <li><a href="#">Land Profile</a></li>
+                <li><a href="{% url 'soil:analysis_history' %}">Analysis History</a></li>
+                <li><a href="{% url 'soil:calibrate' %}">Calibrate</a></li>
                 <li><a href="#">Login</a></li>
                 <li><a href="#">Sign Up</a></li>
             </ul>
